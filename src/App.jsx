@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       {/* Styling for card */}
-      <div className="max-w-3/12 rounded overflow-hidden shadow-lg">
-        <img className="w-full" src="null" alt="Example botcard" />
+      <div className="ml-2 mt-2 max-w-3xs rounded overflow-hidden shadow-lg">
+        <img className="w-full" src="null" alt="Example botcard. Image goes here" />
         <div className="px-6 py-4 ">
           <div className="font-bold text-sm mb-2 ">BotName</div>
           <p className="text-gray-700 text-xs">Bot Catch Phrase</p>
