@@ -3,7 +3,7 @@ function Header() {
     <>
       <div className="bg-gray-200 rounded flex justify-center h-6 items-center m-2">
         <h1>
-          Bot Battlr
+          Bot Battlr {/* Try saying it 10x fast */}
         </h1>
       </div>
     </>

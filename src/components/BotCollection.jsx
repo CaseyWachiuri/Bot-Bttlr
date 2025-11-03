@@ -1,19 +1,7 @@
 import { useState, useEffect } from 'react';
 import BotCard from "./BotCard";
 
-function BotCollection() {
-  const [bots, setBots] = useState([]);
-
-  // Initial fetch on page render
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("http://localhost:8001/bots");
-      const data = await res.json();
-      setBots(data);
-    };
-
-    fetchData();
-  },[])
+function BotCollection({bots}) {
 
   // Iteration through the array to create each bot card element
   const botList = bots.map((item) => <BotCard bot={item} />);
