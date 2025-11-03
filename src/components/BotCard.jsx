@@ -19,7 +19,7 @@ function BotCard({ bot }) {
     <>
       {/* Styling for card */}
       <div key={id} className="relative ml-2 mr-2 mt-2 max-w-3xs rounded overflow-hidden shadow-lg" onClick={ handleClick }> {/* Add onClick handler */}
-        <MdOutlineDelete className="absolute top-0 right-0 size-6" onClick={ handleDelete } />
+        <MdOutlineDelete className="text-gray-300 hover:text-red-600 absolute top-0 right-0 size-6" onClick={ handleDelete } />
         <img className="w-full" src={avatar_url} alt="Example botcard. Image goes here" />
         <div className="px-6 py-4 ">
           <div className="font-bold text-sm mb-2 ">{ name }</div>
