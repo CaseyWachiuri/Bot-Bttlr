@@ -1,4 +1,19 @@
+import { useState, useEffect } from 'react';
+
 function BotCollection() {
+  const [bots, setBots] = useState([]);
+
+  // Initial fetch on page render
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("http://localhost:8001/bots");
+      const data = await res.json();
+      setBots(data);
+    };
+
+    fetchData();
+  },[])
+
   return (
     <>
       {/* Styling for card */}
