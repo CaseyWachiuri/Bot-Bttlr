@@ -1,14 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="border" >
-        Hello
+      {/* Styling for card */}
+      <div className="max-w-3/12 rounded overflow-hidden shadow-lg">
+        <img className="w-full" src="null" alt="Example botcard" />
+        <div className="px-6 py-4 ">
+          <div className="font-bold text-sm mb-2 ">BotName</div>
+          <p className="text-gray-700 text-xs">Bot Catch Phrase</p>
+        </div>
+        <div className="px-6 pt-4 pb-2">
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-1 mb-2">Health</span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-1 mb-2">Damage</span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-1 mb-2">Armor</span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-1 mb-2">Bot Class</span>
+        </div>
       </div>
     </>
   )
