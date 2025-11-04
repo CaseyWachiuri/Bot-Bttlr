@@ -28,10 +28,9 @@ function App() {
 
   // Remove from Army
   function handleHonDischarge(bot){
-    /* setMyArmy(
+    setMyArmy(
       myArmy.filter(item => item.id !== bot.id)
-    );*/
-    console.log(bot.id);
+    );
   }
 
   // Delete a Bot from the database
