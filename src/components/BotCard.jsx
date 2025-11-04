@@ -2,13 +2,13 @@
 function BotCard({ bot, handleClick, children }) {
 
   // Destructuring the bot data
-  const {id, name, health, damage, armor, bot_class, catchphrase, avatar_url} = bot;
+  const { name, health, damage, armor, bot_class, catchphrase, avatar_url} = bot;
 
 
   return (
     <>
       {/* Styling for card */}
-      <div className="relative ml-2 mr-2 mt-2 max-w-3xs rounded overflow-hidden shadow-lg" onClick={() => {handleClick(id)} }> {/* Add onClick handler */}
+      <div className="relative ml-2 mr-2 mt-2 max-w-3xs rounded overflow-hidden shadow-lg" onClick={() => {handleClick({ bot })} }> {/* Add onClick handler */}
         { children }
         <img className="w-full" src={avatar_url} alt="Example botcard. Image goes here" />
         <div className="px-6 py-4 ">

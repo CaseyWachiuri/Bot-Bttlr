@@ -20,11 +20,9 @@ function App() {
 
   // Add bot to personal army
   function handleEnlist(bot) {
-    if(!myArmy.find(item => item.id === bot.id)) {
-      setMyArmy({
-        ...myArmy,
-        bot
-      })
+    const isPresent = myArmy.find(item => item.id === bot.id);
+    if (!isPresent) {
+      setMyArmy(myArmy => [...myArmy, bot]);
     }
   }
 
@@ -37,8 +35,8 @@ function App() {
   }
 
   // Delete a Bot from the database
-  function handleDishonDischarge({botId}) {
-    console.log("Delete permanent: ",botId);
+  function handleDishonDischarge(botId) {
+    console.log("Delete permanent: ", botId);
     //setMyArmy(
   }
 

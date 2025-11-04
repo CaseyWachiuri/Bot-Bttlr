@@ -11,7 +11,6 @@ function BotCollection({bots, onEnlist, onRelease}) {
   function handleEnlist(bot) {
     onEnlist(bot);
   }
-  console.log("issue here");
 
   // Iteration through the array to create each bot card element
   const botList = bots.map((item) => {

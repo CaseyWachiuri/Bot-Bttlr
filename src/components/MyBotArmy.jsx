@@ -7,7 +7,7 @@ function MyBotArmy({ bot, onRelease }) {
     onRelease(bot);
   }
 
-  const botList = bot.map((item) => <BotCard key={item.id} handleClick={() => handleClick({item})} bot={item} />);
+  const botList = bot.map((item) => <BotCard key={item.id} handleClick={() => handleClick(item)} bot={item} />);
 
   if (!botList) return <div>Loading BotList...</div>
 
