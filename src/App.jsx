@@ -11,7 +11,7 @@ http://localhost:8001/bots
   // Initial fetch on page render
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("https://https://bot-bttler.netlify.app/bots");
+      const res = await fetch("https://https://bot-bttler.netlify.app/db.json");
       const data = await res.json();
       setBots(data);
     };
