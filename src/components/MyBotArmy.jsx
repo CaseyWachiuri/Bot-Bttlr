@@ -1,4 +1,5 @@
 import BotCard from "./BotCard";
+import Header from "./Header";
 
 // uses state to hold the value of my army
 function MyBotArmy({ bot, onRelease }) {
@@ -13,6 +14,7 @@ function MyBotArmy({ bot, onRelease }) {
 
   return (
     <>
+      <Header text={"My Bot Army"} />
       <div className="flex flex-wrap justify-between ">
         { botList }
       </div>

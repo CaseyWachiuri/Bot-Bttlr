@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header text={"Bot Battlr"}/>
       {myArmy && <MyBotArmy bot={ myArmy }  onRelease={handleHonDischarge} /> }
       <BotCollection bots={bots} onEnlist={handleEnlist} onRelease={handleDishonDischarge} />
     </>

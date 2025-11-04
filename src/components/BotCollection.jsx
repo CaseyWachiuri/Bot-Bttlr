@@ -1,5 +1,6 @@
 import { MdOutlineDelete } from "react-icons/md";
 import BotCard from "./BotCard";
+import Header from "./Header";
 
 function BotCollection({bots, onEnlist, onRelease}) {
   function handleDelete(e, id) {
@@ -24,6 +25,7 @@ function BotCollection({bots, onEnlist, onRelease}) {
 
   return (
     <>
+      <Header text={"Bot Collection"} />
       <div className="flex flex-wrap justify-between ">
         { botList }
       </div>

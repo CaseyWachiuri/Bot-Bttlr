@@ -1,9 +1,9 @@
-function Header() {
+function Header({ text }) {
   return(
     <>
       <div className="bg-gray-200 rounded flex justify-center h-6 items-center m-2">
         <h1>
-          Bot Battlr {/* Try saying it 10x fast */}
+          { text } {/* Try saying it 10x fast */}
         </h1>
       </div>
     </>
