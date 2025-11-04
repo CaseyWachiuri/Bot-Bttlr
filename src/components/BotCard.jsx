@@ -1,25 +1,15 @@
-import { MdOutlineDelete } from "react-icons/md";
 
-function BotCard({ bot }) {
+function BotCard({ bot, handleClick, children }) {
 
   // Destructuring the bot data
   const {id, name, health, damage, armor, bot_class, catchphrase, avatar_url} = bot;
 
-  function handleClick() {
-    console.log("You clicked me: ", id);
-  }
-
-  function handleDelete(e) {
-    // Stop propogation since button is in div
-    e.stopPropagation();
-    console.log("Release me: ", id);
-  }
 
   return (
     <>
       {/* Styling for card */}
-      <div key={id} className="relative ml-2 mr-2 mt-2 max-w-3xs rounded overflow-hidden shadow-lg" onClick={ handleClick }> {/* Add onClick handler */}
-        <MdOutlineDelete className="text-gray-300 hover:text-red-600 absolute top-0 right-0 size-6" onClick={ handleDelete } />
+      <div className="relative ml-2 mr-2 mt-2 max-w-3xs rounded overflow-hidden shadow-lg" onClick={() => {handleClick(id)} }> {/* Add onClick handler */}
+        { children }
         <img className="w-full" src={avatar_url} alt="Example botcard. Image goes here" />
         <div className="px-6 py-4 ">
           <div className="font-bold text-sm mb-2 ">{ name }</div>

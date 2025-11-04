@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Header from "./components/Header";
 import BotCollection from "./components/BotCollection";
+import MyBotArmy from "./components/MyBotArmy";
 
 function App() {
   const [bots, setBots] = useState([]);
@@ -15,32 +16,37 @@ function App() {
     };
 
     fetchData();
-  },[])
+  },[]) //Check to see if it re-renders when the army value is deleted
 
   // Add bot to personal army
-  function handleAddToArmy({bot}) {
-    setMyArmy(
-      ...myArmy,
-      {bot}
-    )
+  function handleEnlist(bot) {
+    if(!myArmy.find(item => item.id === bot.id)) {
+      setMyArmy({
+        ...myArmy,
+        bot
+      })
+    }
   }
 
   // Remove from Army
-  function handleRemoveFromArmy({botId}){
-    setMyArmy(
-      myArmy.filter(item => item.id !== botId)
-    );
+  function handleHonDischarge(bot){
+    /* setMyArmy(
+      myArmy.filter(item => item.id !== bot.id)
+    );*/
+    console.log(bot.id);
   }
 
   // Delete a Bot from the database
-  function deleteBot({bot}) {
-    console.log(bot);
+  function handleDishonDischarge({botId}) {
+    console.log("Delete permanent: ",botId);
+    //setMyArmy(
   }
 
   return (
     <>
       <Header />
-      <BotCollection bots={bots} />
+      {myArmy && <MyBotArmy bot={ myArmy }  onRelease={handleHonDischarge} /> }
+      <BotCollection bots={bots} onEnlist={handleEnlist} onRelease={handleDishonDischarge} />
     </>
   )
 }

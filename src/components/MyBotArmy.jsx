@@ -1,16 +1,23 @@
-// Personal botarmy
+import BotCard from "./BotCard";
 
 // uses state to hold the value of my army
-function MyBotArmy({ bot }) {
+function MyBotArmy({ bot, onRelease }) {
 
-  // Destructuring bot data
-  const {id, name, health, damage, armor, bot_class, catchphrase, avatar_url} = bot;
-
-  function handleClick() {
-    console.log("You lemme go from your army: ", id);
+  function handleClick(bot) {
+    onRelease(bot);
   }
 
-  // return ();
+  const botList = bot.map((item) => <BotCard key={item.id} handleClick={() => handleClick({item})} bot={item} />);
+
+  if (!botList) return <div>Loading BotList...</div>
+
+  return (
+    <>
+      <div className="flex flex-wrap justify-between ">
+        { botList }
+      </div>
+    </>
+  );
 }
 
 export default MyBotArmy;
