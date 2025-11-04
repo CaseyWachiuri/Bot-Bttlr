@@ -6,11 +6,12 @@ import MyBotArmy from "./components/MyBotArmy";
 function App() {
   const [bots, setBots] = useState([]);
   const [myArmy, setMyArmy] = useState([]);
+http://localhost:8001/bots
 
   // Initial fetch on page render
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:8001/bots");
+      const res = await fetch("https://https://bot-bttler.netlify.app/bots");
       const data = await res.json();
       setBots(data);
     };
@@ -36,7 +37,7 @@ function App() {
   // Delete a Bot from the database
   function handleDishonDischarge(botId) {
     console.log("Delete permanent: ", botId);
-    fetch(`http://localhost:8001/${botId}`, {
+    fetch(`https://bot-bttler.netlify.app/${botId}`, {
       method: "DELETE",
     })
       .then(() => {
