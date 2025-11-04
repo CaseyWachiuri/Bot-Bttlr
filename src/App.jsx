@@ -36,7 +36,13 @@ function App() {
   // Delete a Bot from the database
   function handleDishonDischarge(botId) {
     console.log("Delete permanent: ", botId);
-    //setMyArmy(
+    fetch(`http://localhost:8001/${botId}`, {
+      method: "DELETE",
+    })
+      .then(() => {
+        setMyArmy(myArmy.filter(bot => bot.id !== botId));
+        setBots(bots.filter(bot => bot.id !== botId));
+      })
   }
 
   return (
