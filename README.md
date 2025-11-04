@@ -8,11 +8,12 @@ Welcome to **Bot Battlr**, the one and only spot in the known universe where you
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 ## Installation Requirements
-Node
+Node, json-server
 
 ### Installation Instructions
 ```
 git clone git@github.com:CaseyWachiuri/Bot-Bttlr.git
+npm install
 
 ```
 ## Technologies used
